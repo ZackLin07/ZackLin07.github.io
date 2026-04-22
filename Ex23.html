@@ -2,57 +2,76 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Spec Button</title>
+<title>Interactive Button</title>
 
-<!-- Roboto 字體 -->
+<!-- Roboto -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
 
 <style>
     body {
         font-family: 'Roboto', sans-serif;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
         height: 100vh;
-        background: #ffffff;
     }
 
+    /* Button */
     .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
 
-        height: 22px;                 /* h22 */
-        padding: 0 18px;              /* 左右間距 (視覺約18~22) */
+        height: 22px;
+        padding: 0 18px;
 
-        font-size: 13px;              /* Roboto 13px */
-        font-weight: 400;
-        color: #2f2f2f;               /* spec 顏色 */
+        font-size: 13px;
+        color: #2f2f2f;
 
-        background-color: #ffffff;    /* spec background */
-        border: 1px solid #2f2f2f;    /* outline 1px */
+        background-color: #ffffff;
+        border: 1px solid #2f2f2f;
+        border-radius: 8px;
 
-        border-radius: 8px;           /* R8 */
         cursor: pointer;
-
-        box-sizing: border-box;
     }
 
-    /* hover（加分） */
     .btn:hover {
         background-color: #f5f5f5;
     }
 
-    /* active（更像設計） */
-    .btn:active {
-        transform: scale(0.98);
+    /* Info box */
+    .info {
+        margin-top: 20px;
+        padding: 10px 15px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        display: none; /* 預設隱藏 */
+        width: 250px;
+        text-align: center;
     }
 </style>
 </head>
 
 <body>
 
-<button class="btn">查看資訊</button>
+<button class="btn" onclick="toggleInfo()">背景資訊</button>
+
+<div id="infoBox" class="info">
+    這裡是一些隨便的資訊 😎<br>
+    例如：這是一個示範按鈕功能！
+</div>
+
+<script>
+function toggleInfo() {
+    const box = document.getElementById("infoBox");
+    if (box.style.display === "none") {
+        box.style.display = "block";
+    } else {
+        box.style.display = "none";
+    }
+}
+</script>
 
 </body>
 </html>
