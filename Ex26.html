@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
 
+/* 左：不變形 + 圓角 */
+.left {
+  width: 33%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+/* 中：圓形 */
+.center {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+/* 右：變形（故意不加 object-fit） */
+.right {
+  width: 33%;
+  height: 300px;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+/* hover 效果（保留你原本的） */
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+</style>
+</head>
+
+<body>
+
+<!-- 左圖 -->
+<img src="paris.jpg" class="left">
+
+<!-- 中間圓形 -->
+<img src="img_5terre.jpg" class="center">
+
+<!-- 右圖 -->
+<img src="paris.jpg" class="right">
+
+</body>
+</html>
