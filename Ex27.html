@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #55a9e3;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 720px;
+      max-width: 90vw;
+      background: #fff;
+      border-radius: 10px;
+      padding: 12px;
+    }
+
+    .header {
+      height: 110px;
+      background: #a8cf45;
+      margin-bottom: 8px;
+    }
+
+    .middle {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+	.middle .box {
+  		flex: 1;
+  		height: 120px;
+      background: #18b7c9;
+      min-height: 60px;   /* 🔥 關鍵：避免被壓扁 */
+    }
+
+    .bottom {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .bottom .box {
+      height: 70px;
+      background: #d9e0e3;
+    }
+
+    @media screen and (max-width: 480px) {
+      .container {
+        width: 260px;
+      }
+
+      .header {
+        height: 80px;
+      }
+
+      .middle {
+        flex-direction: column;
+      }
+
+      .middle .box {
+        height: 55px;
+      }
+
+      .bottom {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .bottom .box {
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header"></div>
+
+    <div class="middle">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+
+    <div class="bottom">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </div>
+</body>
+</html>
