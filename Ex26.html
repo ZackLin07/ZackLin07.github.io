@@ -4,33 +4,22 @@
 <style>
 body {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 40px;
   height: 100vh;
   margin: 0;
 }
 
-/* 左右圖片 */
-.side {
-  width: 100px;
+/* 左：不變形 + 圓角（❌拿掉 border） */
+.left {
+  width: 33%;
   height: 300px;
-  border: 1px solid #ddd;
+  object-fit: cover;
+  border-radius: 18px;
   padding: 5px;
 }
 
-/* 左：不變形 */
-.left {
-  object-fit: cover;
-  border-radius: 18px;
-}
-
-/* 右：變形（故意不加 object-fit） */
-.right {
-  /* no object-fit → distortion */
-}
-
-/* 中間圓形 */
+/* 中：圓形（保留 border） */
 .center {
   width: 150px;
   height: 150px;
@@ -40,23 +29,26 @@ body {
   padding: 5px;
 }
 
-/* hover 效果 */
+/* 右：變形（❌拿掉 border） */
+.right {
+  width: 33%;
+  height: 300px;
+  padding: 5px;
+}
+
 img:hover {
-  box-shadow: 0 0 5px rgba(0, 140, 186, 0.5);
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 </style>
 </head>
 
 <body>
 
-<!-- 左 -->
-<img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" class="side left">
+<img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" class="left">
 
-<!-- 中 -->
 <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="center">
 
-<!-- 右 -->
-<img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" class="side right">
+<img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" class="right">
 
 </body>
 </html>
