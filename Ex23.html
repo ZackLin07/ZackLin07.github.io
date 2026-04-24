@@ -1,71 +1,91 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>顯示背景資訊</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Information Button</title>
 
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-      background: #ffffff;
+      padding-top: 50px;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .card {
+      width: 500px;
+      background-color: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-box {
+      position: relative;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .info-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
       height: 22px;
       padding: 0 18px;
       font-size: 13px;
-      font-weight: 400;
       color: #2f2f2f;
       background-color: #ffffff;
       border: 1px solid #2f2f2f;
       border-radius: 8px;
-      box-sizing: border-box;
       cursor: pointer;
     }
 
-    .btn:hover {
-      background-color: #f5f5f5;
+    .info-btn:hover {
+      background-color: #f1f1f1;
     }
 
-    .image-box {
-      margin-top: 20px;
+    .info {
       display: none;
-      text-align: center;
-    }
-
-    .image-box img {
-      max-width: 90vw;
-      width: 700px;
-      height: auto;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+      margin-top: 15px;
+      padding: 12px;
+      background-color: #eef7ff;
+      border-left: 5px solid #4da3ff;
+      line-height: 1.6;
     }
   </style>
 </head>
+
 <body>
 
-  <button class="btn" onclick="showImage()">背景資訊</button>
+  <div class="card">
+    <div class="image-box">
+      <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" alt="Paris">
+      <button class="info-btn" onclick="showInfo()">背景資訊</button>
+    </div>
 
-  <div id="imageBox" class="image-box">
-    <img src="Screenshot 2026-03-04 143546.png" alt="背景資訊圖片">
+    <div id="infoText" class="info">
+      <strong>圖片介紹：</strong><br>
+      這是一張巴黎艾菲爾鐵塔的圖片。艾菲爾鐵塔是法國巴黎最著名的地標之一，
+      也是世界知名的觀光景點。這張圖片可以用來展示旅遊、城市風景或景點介紹。
+    </div>
   </div>
 
   <script>
-    function showImage() {
-      document.getElementById("imageBox").style.display = "block";
+    function showInfo() {
+      var info = document.getElementById("infoText");
+
+      if (info.style.display === "block") {
+        info.style.display = "none";
+      } else {
+        info.style.display = "block";
+      }
     }
   </script>
 
