@@ -1,1 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Properties</title>
+</head>
+<body>
 
+<h2>Person Object Properties</h2>
+
+<p id="before"></p>
+<p id="after"></p>
+
+<script>
+var Person = {
+    firstName: "Tony",
+    lastName: "Lee",
+    age: 50,
+    eyeColor: "Blue"
+};
+
+// List all properties before deleting
+document.getElementById("before").innerHTML =
+    "Before deleting age: " + JSON.stringify(Person);
+
+// Delete age property
+delete Person.age;
+
+// Print object after deleting
+document.getElementById("after").innerHTML =
+    "After deleting age: " + JSON.stringify(Person);
+</script>
+
+</body>
+</html>
